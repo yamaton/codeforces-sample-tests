@@ -1,9 +1,7 @@
-CodeForces Automatic Testing with Sample Inputs
-===============================================
+CodeForces Automatic Testing with Samples
+=========================================
 
-Test your code against the Codeforces sample inputs. The script web-scrapes the
-problem you specify, and then test your code against the sample inputs.  The
-script can handle Python, C++, Haskell, and Scala code.
+Check your code against the Codeforces sample input and output. The script web-scrapes the problem you specify, and then test your code against the sample cases. The script can handle Python, C++, Haskell, and Scala.
  
 
 ### Requirement

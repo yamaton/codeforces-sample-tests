@@ -16,7 +16,7 @@ script can handle Python, C++, Haskell, and Scala code.
 ### Usage
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-python3 cft.py <your-code> <problem-id>
+python3 cft.py <your-code>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE:** the filename **must** contain a problem ID. You may have another

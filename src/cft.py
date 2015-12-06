@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-CodeForces Sample Test
+Codeforces Automatic Testing with Sample Input/Output
 
 @author yamaton
 @date 2015-08-31
       2015-09-27
       2015-11-20  Test C++, Haskell, and Scala in addition to Python
+      2015-12-06  Moved to GitHub repository
 """
 from scrape_codeforces import extract_samples, is_proper
 import subprocess
@@ -55,8 +56,8 @@ def extract_id(filename):
     >>> extract_id('1A what.py')
     '1A'
 
-    >>> extract_id('123_baz.py')
-    None
+    >>> extract_id('123_baz.py') is None
+    True
 
     >>> extract_id('CF123K_baz.py')
     '123K'

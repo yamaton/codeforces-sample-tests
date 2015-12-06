@@ -57,11 +57,10 @@ ghc -O2 -Wall <your-code> -o <your-code>.out
 
 ### Tips
 
-I personally make a shell script `cft` separetely like
+I personally make a symbolic link to the path
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#!/bin/sh
-python /my/path/to/cft.py $1
+ln -s /my/path/to/src/cft.py ~/bin/cft
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 such that I can run this script like this.

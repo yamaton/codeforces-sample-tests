@@ -4,15 +4,12 @@ CodeForces Automatic Testing with Sample Inputs
 Test your code against the Codeforces sample inputs. The script web-scrapes the
 problem you specify, and then test your code against the sample inputs.  The
 script can handle Python, C++, Haskell, and Scala code.
-
  
 
 ### Requirement
 
 -   Internet Connection
-
 -   Python 3.x
-
 -   [Beautiful Soup 4](<http://www.crummy.com/software/BeautifulSoup/>)
 
  
@@ -28,8 +25,6 @@ string in the filename as long as they are separated by space `` `, or hyphen
 ``-`, or underscore`\_\`. For example, following filenames are all allowed. -
 600D.cpp - 600D-sample.py - sample 600A\_code.py - yet
 another\_sample-599D-spongebob.hs
-
- 
 
 The script `cft.py` returns “ok” if the output of your code agrees with the
 sample output.

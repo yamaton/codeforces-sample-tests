@@ -3,7 +3,7 @@ CodeForces Automatic Testing of Sample Inputs
 
 
 Test your code against the Codeforces sample inputs. The script can handle
-Python, C++, Haskell, Scala.
+Python, C++, Haskell, and Scala.
 
  
 **Usage:**
@@ -30,7 +30,7 @@ underscore `_`. For example, following filenames are all allowed.
 
  
 
-The script \`cft.py\` returns “ok” if the output of your code agrees with the
+The script `cft.py` returns “ok” if the output of your code agrees with the
 sample output.
 
 ![](<screenshots/py_600a.png>)
@@ -44,7 +44,7 @@ Otherwise, it shows Input, your output, and correct output. It raises
 
 ### Configuration
 
-Compilation options are set as follows.
+Compilation options are set as follows. Please fix `src/cft.py` to change them.
 
 **C++:**
 ```
@@ -56,7 +56,7 @@ clang++ -std=c++11 <your-code> -o <your-code>.out
 ghc -O2 -Wall <your-code> -o <your-code>.out
 ```
 
-Please fix `cft.py` to change them.
+
 
 
 

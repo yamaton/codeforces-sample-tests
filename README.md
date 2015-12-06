@@ -20,8 +20,8 @@ python3 cft.py <your-code> <problem-id>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE:** the filename **must** contain a problem ID. You may have another
-string in the filename as long as they are separated by space `` `, or hyphen
-``-`, or underscore`\_\`. The prefix `CF` is neglected even without these separators. For example, following filenames are all allowed.
+string in the filename as long as they are separated by space ` `, or hyphen
+`-`, or underscore `_`. The prefix `CF` is neglected even without these separators. For example, following filenames are all allowed.
 
 * 600D.cpp
 * 600D-sample.py

@@ -7,7 +7,7 @@ CodeForces Sample Test
       2015-09-27
       2015-11-20  Test C++, Haskell, and Scala in addition to Python
 """
-from scrape_inputs import extract_samples, is_proper
+from scrape_codeforces import extract_samples, is_proper
 import subprocess
 import sys
 import os

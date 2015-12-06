@@ -1,4 +1,4 @@
-CodeForces Automatic Testing of Sample Inputs
+CodeForces Automatic Testing with Sample Inputs
 ==============================================
 
 
@@ -29,6 +29,7 @@ The script `cft.py` returns “ok” if the output of your code agrees with the
 sample output.
 
 ![](<screenshots/py_600a.png>)
+
 Otherwise, it shows Input, your output, and correct output. It raises
 “Incorrect” if output strings do not agree exactly.
 

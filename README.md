@@ -12,7 +12,6 @@ script can handle Python, C++, Haskell, and Scala code.
 -   Python 3.x
 -   [Beautiful Soup 4](<http://www.crummy.com/software/BeautifulSoup/>)
 
- 
 
 ### Usage
 
@@ -22,9 +21,12 @@ python3 cft.py <your-code> <problem-id>
 
 **NOTE:** the filename **must** contain a problem ID. You may have another
 string in the filename as long as they are separated by space `` `, or hyphen
-``-`, or underscore`\_\`. For example, following filenames are all allowed. -
-600D.cpp - 600D-sample.py - sample 600A\_code.py - yet
-another\_sample-599D-spongebob.hs
+``-`, or underscore`\_\`. For example, following filenames are all allowed.
+
+* 600D.cpp
+* 600D-sample.py
+* sample 600A\_code.py
+* yet another\_sample-599D-spongebob.hs
 
 The script `cft.py` returns “ok” if the output of your code agrees with the
 sample output.

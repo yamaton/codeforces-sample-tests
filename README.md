@@ -29,7 +29,7 @@ The script `cft.py` feeds the samples cases to your code as standard input, and 
 
 ![](<screenshots/py_600a.png>)
 
-Otherwise, it returns “Incorrect”, and shows sample input, your output, and sample output. This happens as long as output strings do not agree **exactly*.
+Otherwise, it returns “Incorrect”, and shows sample input, your output, and sample output. This happens as long as output strings do not agree **exactly**.
 
 ![](<screenshots/cpp_600d.png>)
 

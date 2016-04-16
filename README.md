@@ -1,12 +1,10 @@
-CodeForces Automatic Testing with Samples
+CodeForces Automatic Scraping and Testing
 =========================================
 
-Check your code against the Codeforces sample input and output. The script web-scrapes the problem you specify, and then test your code against the sample cases. The script can handle Python, C++, Haskell, and Scala.
+Test your Codeforces solution against sample cases with ease! This script scrapes sample input and output of the problem you specify, and then test your code against the sample cases. The script can handle Python, C++, Haskell, and Scala.
  
-
 ### Requirement
 
--   Internet Connection
 -   Python 3.x
 -   [Beautiful Soup 4](<http://www.crummy.com/software/BeautifulSoup/>)
 
@@ -14,12 +12,12 @@ Check your code against the Codeforces sample input and output. The script web-s
 ### Usage
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-python3 cft.py <your-code>
+python3 cft.py <filename-of-your-code>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE:** the filename **must** contain a problem ID. You may have another
 string in the filename as long as they are separated by space ` `, or hyphen
-`-`, or underscore `_`. The prefix `CF` is neglected even without these separators. For example, following filenames are all allowed.
+`-`, or underscore `_`. The prefix `CF` is specially treated, and neglected even without these separators. For example, following filenames are all allowed.
 
 * 600D.cpp
 * 600D-sample.py
@@ -27,13 +25,11 @@ string in the filename as long as they are separated by space ` `, or hyphen
 * yet another\_sample-599D-spongebob.hs
 * CF599A.scala
 
-The script `cft.py` returns “ok” if the output of your code agrees with the
-sample output.
+The script `cft.py` feeds the samples cases to your code as standard input, and returns “ok” if the standard output agrees with the samples.
 
 ![](<screenshots/py_600a.png>)
 
-Otherwise, it shows Input, your output, and correct output. It raises
-“Incorrect” if output strings do not agree exactly.
+Otherwise, it returns “Incorrect”, and shows sample input, your output, and sample output. This happens as long as output strings do not agree **exactly*.
 
 ![](<screenshots/cpp_600d.png>)
 

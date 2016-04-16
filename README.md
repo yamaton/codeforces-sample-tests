@@ -1,7 +1,7 @@
-CodeForces Automatic Scraping and Testing
-=========================================
+CodeForces Scraper and Tester
+=============================
 
-Test your Codeforces solution against sample cases with ease! This script scrapes sample input and output of the problem you specify, and then test your code against the sample cases. The script can handle Python, C++, Haskell, and Scala.
+Test your Codeforces solution against sample cases **without copy-pasting**! This script scrapes sample input and output of the problem you specify, and then test your code against the sample cases. It can handle Python, C++, Haskell, and Scala.
  
 ### Requirement
 

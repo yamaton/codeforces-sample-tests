@@ -7,6 +7,7 @@ Codeforces Automatic Testing with Sample Input/Output
       2015-09-27
       2015-11-20  Test C++, Haskell, and Scala in addition to Python
       2015-12-06  Moved to GitHub repository
+      2018-11-27  Applied black. Adapt to new input/output
 """
 from scrape_codeforces import extract_samples, is_proper
 import subprocess
@@ -66,10 +67,10 @@ def extract_id(filename):
     basename ('32A-abc.py') is taken first.
     """
     base = os.path.basename(filename)
-    if base[:2] == 'CF':
+    if base[:2] == "CF":
         base = base[2:]
     candidate = next((s for s in re.split("[-_\.\s]", base) if is_proper(s)), None)
-    
+
     return candidate
 
 
@@ -82,17 +83,17 @@ def id_and_filename_from_argv():
         (str, str).   problem ID and filename
     """
     if len(sys.argv) < 2:
-        sys.exit('Usage: python {} <file-name>'.format(sys.argv[0]))
+        sys.exit("Usage: python {} <file-name>".format(sys.argv[0]))
     filename = sys.argv[1]
     problem_id = extract_id(filename)
 
     try:
         problem_id = problem_id or sys.argv[2]
     except IndexError:
-        sys.exit('Usage: python {} <file-name> <problem-id>'.format(sys.argv[0]))
+        sys.exit("Usage: python {} <file-name> <problem-id>".format(sys.argv[0]))
 
     if not os.path.exists(sys.argv[1]):
-        sys.exit('ERROR: python script {} was not found!'.format(filename))
+        sys.exit("ERROR: python script {} was not found!".format(filename))
 
     return (problem_id, filename)
 
@@ -108,25 +109,23 @@ def run_code(filename, inp):
     basename = os.path.basename(filename)
     base, ext = os.path.splitext(basename)
 
-    if ext == '.py':
+    if ext == ".py":
         com = [sys.executable, filename]
-    elif ext in ('.cc', '.cp', '.cpp', '.c++', '.cxx'):
-        subprocess.run(['clang++', '-std=c++11', filename, '-o', base + '.out'])
-        com = ['./' + base + '.out']
-    elif ext == '.scala':
-        subprocess.run(['scalac', filename])
-        com = ['scala', base]
-    elif ext == '.hs':
-        subprocess.run(['ghc', '-O2', '-Wall', filename, '-o', base + '.out'])
-        com = ['./' + base + '.out']
+    elif ext in (".cc", ".cp", ".cpp", ".c++", ".cxx"):
+        subprocess.run(["clang++", "-std=c++11", filename, "-o", base + ".out"])
+        com = ["./" + base + ".out"]
+    elif ext == ".scala":
+        subprocess.run(["scalac", filename])
+        com = ["scala", base]
+    elif ext == ".hs":
+        subprocess.run(["ghc", "-O2", "-Wall", filename, "-o", base + ".out"])
+        com = ["./" + base + ".out"]
     else:
-        sys.exit('I can take only .py, .cpp, .scala, .hs')
+        sys.exit("I can take only .py, .cpp, .scala, .hs")
 
-    p = subprocess.Popen(com,
-                         stdin=subprocess.PIPE,
-                         stdout=subprocess.PIPE)        
-    out, _ = p.communicate(inp.encode())    # encode: string -> bytestring
-    out = out.decode().strip()              # decode: bytestring -> string
+    p = subprocess.Popen(com, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    out, _ = p.communicate(inp.encode())  # encode: string -> bytestring
+    out = out.decode().strip()  # decode: bytestring -> string
     return out
 
 
@@ -140,16 +139,16 @@ def compare(inputs, outputs, answer):
     assert len(inputs) == len(outputs) == len(answer)
 
     for i, (inp, out, ans) in enumerate(zip(inputs, outputs, answer)):
-        print('Case {}: '.format(i+1), end='')
+        print("Case {}: ".format(i + 1), end="")
         out = out.strip()
         ans = ans.strip()
         if ans == out:
-            print(green('ok'))
+            print(green("ok"))
         else:
-            print(red('==================Incorrect!=================='))
-            print('Input: ', inp)
-            print('Output: ', out)
-            print('Answer: ', ans)
+            print(red("==================Incorrect!=================="))
+            print("Input: ", inp)
+            print("Output: ", out)
+            print("Answer: ", ans)
 
 
 def main():
@@ -161,18 +160,30 @@ def main():
     sample output.
     """
     problem_id, filename = id_and_filename_from_argv()
-    print('\nTesting samples in CodeForces {}: {}'.format(
-            bold(problem_id), bold(filename)))
+    print(
+        "\nTesting samples in CodeForces {}: {}".format(
+            bold(problem_id), bold(filename)
+        )
+    )
 
     json_str = extract_samples(problem_id, is_contest=True)
     json_dict = json.loads(json_str)
-    assert problem_id == json_dict['id']
 
-    inputs = ['\n'.join(d['input']) for d in json_dict['sample_io']]
-    answer = ['\n'.join(d['output']) for d in json_dict['sample_io']]
+    assert problem_id == json_dict["id"]
+
+    inputs = [
+        "\n".join(elem.strip()
+        for elem in d["input"])
+        for d in json_dict["sample_io"]
+    ]
+    answer = [
+        "\n".join(elem.strip()
+        for elem in d["output"])
+        for d in json_dict["sample_io"]
+    ]
     outputs = [run_code(filename, inp) for inp in inputs]
     compare(inputs, outputs, answer)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

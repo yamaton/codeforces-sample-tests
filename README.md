@@ -1,15 +1,14 @@
-CodeForces Scraper and Tester
-=============================
+# Codeforces Scraper and Tester
 
 Test your Codeforces solution against sample cases **without copy-pasting**! This script scrapes sample input and output of the problem you specify, and then test your code against the sample cases. It can handle Python, C++, Haskell, and Scala.
  
-### Requirement
+## Requirement
 
 -   Python 3.x
 -   [Beautiful Soup 4](<http://www.crummy.com/software/BeautifulSoup/>)
 
 
-### Usage
+## Usage
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 python3 cft.py <filename-of-your-code>
@@ -33,14 +32,14 @@ Otherwise, it returns “Incorrect”, and shows sample input, your output, and 
 
 ![](<screenshots/cpp_600d.png>)
 
-### Configuration
+## Configuration
 
 Compilation options are set as follows. Please fix `src/cft.py` to change them.
 
 **C++:**
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-clang++ -std=c++11 <your-code> -o <your-code>.out
+g++-6 -std=c++11 <your-code> -o <your-code>.out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Haskell:**
@@ -49,15 +48,15 @@ clang++ -std=c++11 <your-code> -o <your-code>.out
 ghc -O2 -Wall <your-code> -o <your-code>.out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Tips
+## Tips
 
-I personally make a symbolic link to the path
+I personally make a symbolic link
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ln -s /my/path/to/src/cft.py ~/bin/cft
+ln -s <path-to-this-dir>/cft.py ~/bin/cft
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-such that I can run this script like this.
+such that I can run this script as follows. (Assuming `~/bin` is in your `PATH`.)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cft 600A.py

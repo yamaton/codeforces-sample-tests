@@ -112,7 +112,7 @@ def run_code(filename, inp):
     if ext == ".py":
         com = [sys.executable, filename]
     elif ext in (".cc", ".cp", ".cpp", ".c++", ".cxx"):
-        subprocess.run(["clang++", "-std=c++11", filename, "-o", base + ".out"])
+        subprocess.run(["g++-6", "-std=c++11", filename, "-o", base + ".out"])
         com = ["./" + base + ".out"]
     elif ext == ".scala":
         subprocess.run(["scalac", filename])
